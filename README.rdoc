@@ -79,6 +79,10 @@ Example: Copy specific validators
 
 $ rails_validators email_format url_format
 
+== TODO
+
+Add a state/province validator, perhaps using the 'states_select' project. Perhaps add a list_value_validator which loads the list to check from a yaml file
+
 == Contributing to rails-validators
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet

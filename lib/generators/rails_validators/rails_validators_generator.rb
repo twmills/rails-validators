@@ -14,7 +14,7 @@ class RailsValidatorsGenerator < Rails::Generators::Base
   end
 
   def available_validators
-    [:email, :email_format, :url_format, :company_name, :person_name, :account_number, :name]
+    [:email, :email_format, :url_format, :company_name, :person_name, :account_number, :name, :currency]
   end
 
   def wanted_validators
