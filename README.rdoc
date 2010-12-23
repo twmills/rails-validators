@@ -1,0 +1,87 @@
+= rails-validators
+
+Provides these validators:
+
+== Attribute validators
+
+* company_name
+* person_name
+* email_format (using regexp)
+* email (using mail)
+* url_format 
+
+Person name:
+
+class Pet
+  ...
+  validates :nick_name, :presence => true, :length => {:within => 2..12}, :person_name => true
+end
+
+Company name:
+
+class Company
+  ...
+  validates :name, :presence => true, :length => {:within => 2..40}, :company_name => true
+end
+
+Email format:
+
+class ContactInfo
+  ...
+  validates :email, :presence => true, :email_format => true
+end
+
+Email:
+
+class ContactInfo
+  ...
+  validates :email, :presence => true, :email => true
+end
+
+Email:
+
+class Profile
+  ...
+  validates :webpage, :presence => true, :url_format => true
+end
+
+== Complex validators
+
+* full_name
+
+Usage:
+
+class Person
+  ...
+  validates_with FullNameValidator 
+end
+
+== Generator
+
+Use the provided Rails generator to copy the validators directly into your Rails app so they are available to your models
+
+$ rails_validators [list of validators]
+
+Example: Copy all validators (default)
+
+$ rails_validators
+
+Example: Copy specific validators
+
+$ rails_validators email_format url_format
+
+== Contributing to rails-validators
+ 
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+* Fork the project
+* Start a feature/bugfix branch
+* Commit and push until you are happy with your contribution
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+== Copyright
+
+Copyright (c) 2010 Kristian Mandrup. See LICENSE.txt for
+further details.
+
