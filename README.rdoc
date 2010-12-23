@@ -45,6 +45,15 @@ class Profile
   validates :webpage, :presence => true, :url_format => true
 end
 
+=== Configuration
+
+To finetune the name validators, add a validators.rb initializer file
+
+NameValidator.name_length 3..40
+
+This will make the name validators test for a name length between 2 and 40 characters! 
+Note: The company_name validator always allows for a single character name, unless overridden explicitly using the :length option.
+
 == Complex validators
 
 * full_name
