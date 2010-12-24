@@ -25,6 +25,8 @@ Jeweler::Tasks.new do |gem|
   #  gem.add_development_dependency 'rspec', '> 1.2.3'
   
   gem.add_runtime_dependency "mail"  
+  gem.add_development_dependency 'rspec', '> 1.2.3'  
+  gem.add_development_dependency 'generator-spec', '> 0.7.0'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

@@ -7,11 +7,13 @@ class RailsValidatorsGenerator < Rails::Generators::Base
     copy_validators
   end
 
-  protected
-
-  def validator_dir 
+  def self.validator_dir 
     File.expand_path('../../rails-validators', File.dirname(__FILE__))
   end
+
+  source_root validator_dir
+
+  protected
 
   def available_validators
     [:email, :email_format, :url_format, :company_name, :person_name, :account_number, :name, :currency]
@@ -28,7 +30,7 @@ class RailsValidatorsGenerator < Rails::Generators::Base
     
   def copy_validators
     validators.each do |name|  
-      copy_file File.join(validator_dir, "#{name}_validator.rb"), "app/validators/#{name}_validator.rb"
+      copy_file "#{name}_validator.rb", "app/validators/#{name}_validator.rb"
     end
   end
 end
